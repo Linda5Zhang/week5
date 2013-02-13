@@ -1,0 +1,29 @@
+<h1>Events</h1>
+<%= link_to 'Add a New Event', new_event_url %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Happening On</th>
+    <th>Venue</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= link_to event.title, event %></td>
+    <td><%= event.date_and_time %></td>
+    <td>
+      <% if event.show_venue_name != 'Unknown'%>
+      <%= link_to "#{event.show_venue_name}", event.venue %>
+      <% else %>
+      <%= event.show_venue_name %>
+      <% end %>
+    </td>
+    <td><%= link_to 'Edit', edit_event_url(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

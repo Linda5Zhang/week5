@@ -1,0 +1,22 @@
+<h1>Venues</h1>
+<%= link_to 'Add a New Venue', new_venue_url %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @venues.each do |venue| %>
+  
+  <tr>
+    <td><%= link_to venue.name, venue %></td>
+    <td><%= venue.address %></td>
+    <td><%= link_to 'Edit', edit_venue_url(venue) %></td>
+    <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

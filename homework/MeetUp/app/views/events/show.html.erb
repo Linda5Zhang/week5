@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @event.title %>
+</p>
+
+<p>
+  <b>Happening On:</b>
+  <%= @event.date_and_time %>
+</p>
+
+<p>  
+  <b>Venue:</b>
+  <%= @event.show_venue_name %>
+</p>
+
+<%= link_to 'Edit', edit_event_url(@event) %> |
+<%= link_to 'Back', events_url %>

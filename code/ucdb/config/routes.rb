@@ -10,7 +10,7 @@ Ucdb::Application.routes.draw do
 
 
   #get '/', :controller => 'directors', :action => 'index'
-  root :to => 'directors#index'
+	# root :to => 'directors#index'
 
   resources :directors
 
